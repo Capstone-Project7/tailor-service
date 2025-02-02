@@ -31,5 +31,8 @@ public class Tailor {
 
     @Column(name = "is_active")
     private Boolean isActive = true;  // Default value is true (active)
+
+    @Column(name = "username")
+    private String username;
 }
 

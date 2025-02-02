@@ -19,5 +19,5 @@ public interface TailorRepository extends JpaRepository<Tailor, Long> {
     @Query("SELECT t FROM Tailor t ORDER BY t.workload ASC")
     List<Tailor> findAllTailorsSortedByWorkloadAsc();
 
-    // Optional: Add other custom queries as needed
+    Optional<Tailor> findByUsername(String username);
 }

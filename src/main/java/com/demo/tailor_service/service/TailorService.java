@@ -56,4 +56,8 @@ public class TailorService {
         return repository.findAllTailorsSortedByWorkloadAsc();
     }
 
+    public Optional<Tailor> getTailorByUsername(String username) {
+        return repository.findByUsername(username);
+    }
+
 }

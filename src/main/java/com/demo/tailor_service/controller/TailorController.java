@@ -74,4 +74,14 @@ public class TailorController {
     public ResponseEntity<List<Tailor>> sortTailorsByWorkload() {
         return new ResponseEntity<List<Tailor>>(service.sortTailorsByWorkload(),HttpStatus.OK);
     }
+
+    @GetMapping("/username/{username}")
+    public ResponseEntity<Tailor> getTailorByUsername(@PathVariable String username) {
+        Optional<Tailor> tailor = service.getTailorByUsername(username);
+        if (tailor.isPresent()) {
+            return ResponseEntity.ok(tailor.get());  // Returning status 200 (OK)
+        } else {
+            return ResponseEntity.status(404).body(null);  // Returning status 404 (Not Found)
+        }
+    }
 }
